@@ -11,9 +11,9 @@
                 <span>比赛时间</span>
                 <span>2018.08.10-2018.08.10</span>
             </span>
-            <h4>考试报名</h4>
+            <router-link to="/testRegister"><h4>考试报名</h4></router-link>
             <div>
-                <tr><td>模拟考试</td><td>考点分布</td></tr>
+                <tr><router-link to="/stimulationTest">模拟考试</router-link><td>考点分布</td></tr>
                 <tr><td>考试计划</td><td>报名须知</td></tr>
             </div>
         </div>
@@ -28,9 +28,9 @@
                 <span>比赛时间</span>
                 <span>2018.08.10-2018.08.10</span>
             </span>
-            <h4>考试报名</h4>
+            <router-link to="/testRegister"><h4>考试报名</h4></router-link>
             <div>
-                <tr><td>模拟考试</td><td>考点分布</td></tr>
+                <tr><td><router-link to="/stimulationTest">模拟考试</router-link></td><td>考点分布</td></tr>
                 <tr><td>考试计划</td><td>报名须知</td></tr>
             </div>
         </div>

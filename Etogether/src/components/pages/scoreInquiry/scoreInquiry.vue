@@ -3,7 +3,7 @@
         <div>
             <h2>请输入查询代码</h2>
             <input/>
-            <button>查询</button>
+            <router-link to="/scoreResult"><button>查询</button></router-link>
         </div>
     </div>
 </template>

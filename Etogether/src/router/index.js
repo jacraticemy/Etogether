@@ -1,15 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//import HelloWorld from '@/components/HelloWorld'
-import homePage from '../components/pages/homePage'
-import billZone from '../components/pages/billZone'
-import scoreInquiry from '../components/pages/scoreInquiry'
-import onProgramming from '../components/pages/onProgramming'
-import courseCenter from '../components/pages/courseCenter'
-import downloadCenter from '../components/pages/downloadCenter'
-import login from '../components/pages/login'
-import register from '../components/pages/register'
-import search from '../components/pages/search'
+
+import homePage from '../components/pages/homePage/homePage'
+import billZone from '../components/pages/billZone/billZone'
+import testRegister from '../components/pages/billZone/testRegister'
+import testRegisterCap from '../components/pages/billZone/testRegisterCap'
+import testRegisterMem from '../components/pages/billZone/testRegisterMem'
+import stimulationTest from '../components/pages/billZone/stimulationTest'
+import stimulationTestResult from '../components/pages/billZone/stimulationTestResult'
+import scoreInquiry from '../components/pages/scoreInquiry/scoreInquiry'
+import scoreResult from '../components/pages/scoreInquiry/scoreResult'
+import onProgramming from '../components/pages/onProgramming/onProgramming'
+import courseCenter from '../components/pages/courseCenter/courseCenter'
+import courseDetail from '../components/pages/courseCenter/courseDetail'
+import downloadCenter from '../components/pages/downloadCenter/downloadCenter'
+import login from '../components/pages/login/login'
+import register from '../components/pages/register/register'
+import registerStu from '../components/pages/register/registerStu'
+import registerTea from '../components/pages/register/registerTea'
+import search from '../components/pages/search/search'
+import personalInfo from '../components/pages/personalInfo/personalInfo.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -25,9 +35,39 @@ export default new Router({
       component: billZone
     },
     {
+      path: '/testRegister',
+      name: 'billZone',
+      component: testRegister
+    },
+    {
+      path: '/testRegisterCap',
+      name: 'testRegisterCap',
+      component: testRegisterCap
+    },
+    {
+      path: '/testRegisterMem',
+      name: 'testRegisterMem',
+      component: testRegisterMem
+    },
+    {
+      path: '/stimulationTest',
+      name: 'stimulationTest',
+      component: stimulationTest
+    },
+    {
+      path: '/stimulationTestResult',
+      name: 'stimulationTestResult',
+      component: stimulationTestResult
+    },
+    {
       path: '/scoreInquiry',
       name: 'scoreInquiry',
       component: scoreInquiry
+    },
+    {
+      path: '/scoreResult',
+      name: 'scoreResult',
+      component: scoreResult
     },
     {
       path: '/onProgramming',
@@ -38,6 +78,11 @@ export default new Router({
       path: '/courseCenter',
       name: 'courseCenter',
       component: courseCenter
+    },
+    {
+      path: '/courseDetail',
+      name: 'courseDetail',
+      component: courseDetail
     },
     {
       path: '/downloadCenter',
@@ -55,9 +100,24 @@ export default new Router({
       component: register
     },
     {
+      path: '/registerStu',
+      name: 'registerStu',
+      component: registerStu
+    },
+    {
+      path: '/registerTea',
+      name: 'registerTea',
+      component: registerTea
+    },
+    {
       path: '/search',
       name: 'search',
       component: search
+    },
+    {
+      path: '/personalInfo',
+      name: 'personalInfo',
+      component: personalInfo
     }
   ]
 })

@@ -4,7 +4,8 @@
         <div>账号：<input/></div>
         <div>密码：<input/></div>
         <button>提交</button>
-        <span>没有账号？立即注册！</span>
+        <span><router-link to="/register">没有账号？立即注册！</router-link></span>
+        <span><router-link to="">已有账号？立即激活！</router-link></span>
     </div>
 </template>
 <script>
@@ -18,4 +19,5 @@ export default {
     flex-direction:column;
     text-align: center;
 }
+
 </style>

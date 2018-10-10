@@ -15,15 +15,22 @@
         <div class="tabSearch">
             <router-link to="/search">搜索</router-link>
         </div>
-        <ul>
+        
+        <ul v-if="!ifLogin">
             <router-link to="/register"><li>注册</li></router-link>
             <router-link to="/login"><li>登录</li></router-link>
         </ul>
+        <span v-else><router-link to="/personalInfo"> nicerWu</router-link></span>
     </div>
 </template>
 <script>
 export default {
-    name: 'headTab'
+    name: 'headTab',
+    data() {
+        return{
+            ifLogin: false
+        }
+    }
 }
 </script>
 <style scoped>
