@@ -1,11 +1,9 @@
 <template>
-  <div id="app">
-    <div class="wholePage">
+  <div id="app" class="wholePage">
       <head-tab></head-tab>
       <slideShow></slideShow>
       <router-view/>
       <bottom></bottom>
-    </div>
   </div>
 </template>
 
@@ -31,8 +29,10 @@ export default {
 html,body,#app{
   width: 100%;
   height: 100%;
+  overflow-x:hidden;
 }
 .wholePage{
+  box-sizing: border-box;
   padding: 0 160px;
 }
 </style>
