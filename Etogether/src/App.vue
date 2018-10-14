@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <head-tab></head-tab>
-    <slideShow></slideShow>
-    <router-view/>
-    <bottom></bottom>
-    
+    <div class="wholePage">
+      <head-tab></head-tab>
+      <slideShow></slideShow>
+      <router-view/>
+      <bottom></bottom>
+    </div>
   </div>
 </template>
 
@@ -30,5 +31,8 @@ export default {
 html,body,#app{
   width: 100%;
   height: 100%;
+}
+.wholePage{
+  padding: 0 160px;
 }
 </style>
