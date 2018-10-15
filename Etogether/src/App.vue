@@ -1,9 +1,11 @@
 <template>
-  <div id="app" class="wholePage">
-      <head-tab></head-tab>
+  <div id="app">
+    <head-tab></head-tab>
+    <div :style="{minHeight: minHeight + 'px'} "  class="wholePage">
       <slideShow></slideShow>
       <router-view/>
-      <bottom></bottom>
+    </div>
+    <bottom></bottom>
   </div>
 </template>
 
@@ -13,12 +15,25 @@ import slideShow from '../src/components/common/slideShow'
 import bottom from '../src/components/common/bottom'
 export default {
   name: 'App',
+  data(){
+        return{
+            minHeight: 0
+        }
+    },
+    mounted(){
+        this.minHeight = document.documentElement.clientHeight - 133;
+        var that = this;
+        window.onresize = function(){
+            that.minHeight = document.documentElement.clientHeight - 133;
+        }
+    },
   components: {
     headTab,
     slideShow,
     bottom
   }
 }
+    
 </script>
 
 <style>
@@ -32,7 +47,10 @@ html,body,#app{
   overflow-x:hidden;
 }
 .wholePage{
-  box-sizing: border-box;
-  padding: 0 160px;
+  /* box-sizing: border-box;
+  padding: 0 160px; */
+  width: 1100px;
+  margin: 0 auto;
 }
+.element::-webkit-scrollbar {width:0px}
 </style>

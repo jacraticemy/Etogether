@@ -17,9 +17,7 @@
     <h2>{{ slides[nowIndex].title }}</h2>
     <div @click="goto(prevIndex)" class="arrow">&lt;</div>
     <ul class="slide-pages">
-      <li v-for="(item, index) in slides"
-      @click="goto(index)"
-      >
+      <li v-for="(item, index) in slides" @click="goto(index)">
         <a :class="{on: index === nowIndex}"></a>
       </li>
     </ul>
@@ -112,17 +110,17 @@ export default {
   transition: all .5s;
 }
 .slide-trans-enter {
-  transform: translateX(1300px);
+  transform: translateX(1100px);
 }
 .slide-trans-old-leave-active {
   transition: all .5s;
-  transform: translateX(-1300px);
+  transform: translateX(-1100px);
 }
 .slide-show {
   position: relative;
   margin: 15px 15px 15px 0;
-  width: 1300px;
-  height: 200px;
+  width: 1100px;
+  height: 160px;
   overflow: hidden;
 }
 .slide-show h2 {

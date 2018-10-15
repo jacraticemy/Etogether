@@ -1,123 +1,256 @@
 <template>
-    <div class="homePage">
-        <div class="homePage-eventNotice">
-            <span class="hp-title">
-                <h3>赛事通知</h3>
-                <span>查看全部通知</span>
-            </span>
-            
-            <ul>
-                <li><span>全国青少年机器人创客师资和青少年变成师培训的通知</span><span>发布时间：2018.08.10</span><span>点击下载</span></li>
-                <li><span>全国青少年机器人创客师资和青少年变成师培训的通知</span><span>发布时间：2018.08.10</span><span>点击下载</span></li>
-                <li><span>全国青少年机器人创客师资和青少年变成师培训的通知</span><span>发布时间：2018.08.10</span><span>点击下载</span></li>
-                <li><span>全国青少年机器人创客师资和青少年变成师培训的通知</span><span>发布时间：2018.08.10</span><span>点击下载</span></li>
-                <li><span>全国青少年机器人创客师资和青少年变成师培训的通知</span><span>发布时间：2018.08.10</span><span>点击下载</span></li>
-                <li><span>全国青少年机器人创客师资和青少年变成师培训的通知</span><span>发布时间：2018.08.10</span><span>点击下载</span></li>
-            </ul>
-        </div>
-        <div class="homePage-reCourse">
-            <span class="hp-title">
-                <h3>推荐课程</h3>
-                <span>查看全部通知</span>
-            </span>
-            <ul>
-                <li>
-                    <img src="http://d.hiphotos.baidu.com/image/h%3D300/sign=b9cd963b6663f624035d3f03b745eb32/203fb80e7bec54e77d03071cb4389b504ec26ac0.jpg"/>
-                    <div class="course-item">
-                        <div>
-                            <div>Scratch案例</div>
-                            <div>发布时间：2018.08.10</div>
-                        </div>
-                        <div>222</div>
-                    </div>
-                </li>
-                <li>
-                    <img src="http://d.hiphotos.baidu.com/image/h%3D300/sign=b9cd963b6663f624035d3f03b745eb32/203fb80e7bec54e77d03071cb4389b504ec26ac0.jpg"/>
-                    <div class="course-item">
-                        <div>
-                            <div>Scratch案例</div>
-                            <div>发布时间：2018.08.10</div>
-                        </div>
-                        <div>222</div>
-                    </div>
-                </li>
-                <li>
-                    <img src="http://d.hiphotos.baidu.com/image/h%3D300/sign=b9cd963b6663f624035d3f03b745eb32/203fb80e7bec54e77d03071cb4389b504ec26ac0.jpg"/>
-                    <div class="course-item">
-                        <div>
-                            <div>Scratch案例</div>
-                            <div>发布时间：2018.08.10</div>
-                        </div>
-                        <div>222</div>
-                    </div>
-                </li>
-                <li>
-                    <img src="http://d.hiphotos.baidu.com/image/h%3D300/sign=b9cd963b6663f624035d3f03b745eb32/203fb80e7bec54e77d03071cb4389b504ec26ac0.jpg"/>
-                    <div class="course-item">
-                        <div>
-                            <div>Scratch案例</div>
-                            <div>发布时间：2018.08.10</div>
-                        </div>
-                        <div>222</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="homePage-interact">
-            <span class="hp-title">
-                <h3>师生互动</h3>
-                <span>查看全部通知</span>
-            </span>
-            <div class="interactDetail">
-                <img src="http://a.hiphotos.baidu.com/image/pic/item/377adab44aed2e73c3dc082b8a01a18b87d6fa84.jpg"/>
-                <div class="interactDetail-abstract">
-                    <span>第九届蓝桥杯大赛</span>
-                    <div>从某种意义上说，个人简介的写作不亚于参加面试。通过短短数百字的个人简介，不但要能较充分地展现出毕业生的才能及综合素质，而且要使聘任者感到自己是位思维清晰、条理性强、语言表达能力突出的应聘者。因此，写好个人简介是求职成功的第一步。 但是，在实际中，不少毕业生对个人简介和求职信之间的界线辨析不清，影向了求职效果。这里，我就先讲一下两者的区别与联系。从某种意义上说，个人简介的写作不亚于参加面试。通过短短数百字的个人简介，不但要能较充分地展现出毕业生的才能及综合素质，而且要使聘任者感到自己是位思维清晰、条理性强、语言表达能力突出的应聘者。因此，写好个人简介是求职成功的第一步。 但是，在实际中，不少毕业生对个人简介和求职信之间的界线辨析不清，影向了求职效果。这里，我就先讲一下两者的区别与联系。</div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="homePage" id="homePage">
+		<div class="homePage-eventNotice  box-shadow">
+			<div class="hp-title">
+				<div class="hp-title-notice">
+					<img src="../../../../static/logoAll/homePage/painter.png" />
+					<span>赛事通知</span>
+				</div>
+				<div class="hp-title-more">
+					<div>查看全部通知
+						<img src="../../../../static/logoAll/homePage/more-arrow.png" /></div>
+				</div>
+			</div>
+			<ul class="noticeDetail">
+				<li v-for="(item, index) in noticeList"><div style="display:inline-block;width:700px;">{{index+1}}.{{item.contestName}}</div>
+					<div style="display:inline-block;" class="noticeTime">发布时间：{{item.pubulishTime}}</div>
+					<div class="homeDownload">点击下载</div>
+				</li>
+			</ul>
+		</div>
+		<div class="homePage-reCourse">
+			<div class="hp-title">
+				<div class="hp-title-notice">
+					<img src="../../../../static/logoAll/homePage/clock.png" />
+					<span>推荐课程</span>
+				</div>
+				<div class="hp-title-more">
+					<div style="display:inline-block;">查看全部通知
+						<img src="../../../../static/logoAll/homePage/more-arrow.png" /></div>
+				</div>
+			</div>
+			<ul class="recommonCourse">
+				<li v-for="item in recommonList" class="box-shadow">
+					<img :src="item.picURL" />
+					<div class="course-item">
+						<div class="recommonName">{{item.courseName}}</div>
+						<div class="course-item-re">
+							
+							<div class="recommonTime">发布时间：{{item.publishTime}}</div>
+							<div class="recommonNum">{{item.hasLearnt}}人已学</div>
+						</div>
+					</div> 
+				</li>
+			</ul>
+		</div>
+		<div class="homePage-interact box-shadow">
+			<span class="hp-title">
+                <div class="hp-title-notice">
+					<img src="../../../../static/logoAll/homePage/clock.png" />
+					<span>师生互动</span>
+				</div>
+			</span>
+			<div class="interactDetail">
+				<img :src="interraction.picURL" />
+				<div class="interactDetail-abstract">
+					<div class="interactDetail-title">{{interraction.interTitle}}</div>
+					<div class="interactDetail-detail">{{interraction.interAbstract}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 <script>
-export default {
-    name: 'homePage',
-}
+	import axios from 'axios'
+	export default {
+		name: 'homePage',
+		data() {
+			return {
+				noticeList: [],
+				recommonList: [],
+				interraction: {}
+			}
+		},
+		created(){
+			axios.get('http://rap2api.taobao.org/app/mock/94413/homePage')
+			.then(res=>{
+				this.noticeList = res.data.contestNotice.contestDetail;
+				this.recommonList = res.data.recommonCourse.recommonDetail;
+				this.interraction = res.data.interraction;
+			})
+		}
+	}
 </script>
 <style scoped>
-ul{
-    list-style: none;
-}
-.homePage{
-    padding: 0 80px;
-}
-.hp-title,.hp-title h3,.hp-title span{
-    display: inline-block;
-}
-.homePage-reCourse ul{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
-.homePage-reCourse ul li{
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-}
-.course-item{
-    display: flex;
-    flex-direction: row;
-}
-.interactDetail{
-    display: flex;
-    height: 150px;
-}
-.interactDetail img{
-    display: inline-block;
-    width: 20%;
-}
-.interactDetail-abstract{
-    width: 80%;
-    display: inline-block;
-}
+	
+	.noticeDetail li:hover{
+		color: #0066CC;
+		border: 1px solid #0066cc;
+		height: 33px;
+		line-height: 33px;
+	}
+	.homeDownload{
+		display: inline-block;
+		font-size: 16px;
+		color: #000;
+		margin-left: 80px;
+	}
+	.homeDownload:hover{
+		color: #06c;
+	}
+	.noticeTime{
+		font-size: 14px;
+		color: #999;
+	}
+	.box-shadow{
+		-moz-box-shadow:0 0 10px #888;
+     	-webkit-box-shadow:0 0 10px #888;
+    	box-shadow:0 0 10px #888;
+	}
+	.homePage{
+		width: 100%;
+	}
+	ul {
+		list-style: none;
+	}
+	
+	.hp-title {
+		width: 100%;
+		height: 60px;
+		margin-bottom: 18px;
+		line-height: 60px;
+		border-radius: 3px;
+		background-color: #99ccff;
+		font-size: 14px;
+		position: relative;
+	}
+	
+	img {
+		position: relative;
+		top: 5px;
+		width: 22px;
+	}
+	.hp-title img{
+		width: 22px;
+		height: 22px;
+	}
+	.hp-title-notice {
+		position: absolute;
+		left: 20px;
+	}
+	
+	.hp-title-more {
+		position: absolute;
+		right: 20px;
+	}
+	span {
+		text-decoration: none;
+		color: #000;
+		display: inline-block;
+		font-family: "微软雅黑";
+		font-size: 18px;
+	}
+	
+	.homePage-eventNotice {
+		margin-bottom: 32px;
+	}
+	
+	.homePage-eventNotice ul {
+		padding-bottom: 5px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	
+	.homePage-eventNotice li {
+		height: 35px;
+		line-height: 35px;
+		padding: 10px 44px;
+		font-size: 16px;
+		font-family: "微软雅黑";
+		color: #000;
+	}
+	
+	.homePage-eventNotice ul:hover {
+		color: #0066CC;
+	}
+	
+	.homePage-reCourse ul {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		margin-bottom: 64px;
+	}
+	
+	.recommonCourse img {
+		height: 248px;
+		width: 100%;
+		margin-top: -5px;
+	}
+	
+	.homePage-reCourse ul li {
+		display: flex;
+		flex-direction: column;
+		width: 24%;
+		height: 320px;
+	}
+	.recommonName{
+		font-size: 18px;
+	}
+	.recommonTime{
+		font-size: 14px;
+		color:#999;
+	}
+	.recommonNum{
+		font-size: 14px;
+	}
+	.course-item {
+		display: flex;
+		flex-direction: column;
+		height: 80px;
+		justify-content: center;
+		padding: 0 15px;
+	}
+	.course-item-re{
+		display: flex;
+		justify-content: space-between;
+	}
+	.interactDetail {
+		display: flex;
+		height: 200px;
+		padding: 30px 30px;
+		margin-bottom: 40px;
+		margin-top: -18px;
+	}
+	
+	.interactDetail img {
+		display: inline-block;
+		width: 30%;
+	}
+	
+	.interactDetail-abstract {
+		display: inline-block;
+		padding-left: 40px;
+		height: 200px;
+	}
+	.interactDetail-title{
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+	.interactDetail-detail{
+		color: #999;
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis; /* for Opera */
+		-icab-text-overflow: ellipsis; /* for iCab */
+		-khtml-text-overflow: ellipsis; /* for Konqueror Safari */
+		-moz-text-overflow: ellipsis; /* for Firefox,mozilla */
+		-webkit-text-overflow: ellipsis; /* for Safari,Swift*/
+		height: 80%;
+	}
+	.homePage-interact{
+		margin-top: -30px;
+	}
 </style>
